@@ -1,0 +1,16 @@
+{
+  "name": "karaweb",
+  "version": "1.0.0",
+  "description": "world proccessign api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "babak alizadeh",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "tedious": "^11.0.9"
+  }
+}
