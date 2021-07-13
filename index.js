@@ -61,9 +61,8 @@ app.get('/api/30day/io/:empCode', (req, res) => {
                 };
                 rws.push(resultRow);
             });
-
-            res.send(JSON.stringify(rws));
         }
+        res.send(JSON.stringify(rws));
     });
 
 
