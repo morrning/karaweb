@@ -52,16 +52,18 @@ app.get('/api/30day/io/:empCode', (req, res) => {
     request = new Request("SELECT * FROM DataFile WHERE (Emp_No = @code) ORDER BY Date ASC;", function(err, rowCount, rows) {
         console.log("-Doing: Get 30 days I/O for user:" + req.params.empCode)
         var rws = [];
-        rows.forEach(columns => {
-            var resultRow = {
-                Date: Number(columns[2].value),
-                Time: Number(columns[3].value),
-                DeviceNumber: Number(columns[8].value)
-            };
-            rws.push(resultRow);
-        });
+        if (rows != undefined){
+            rows.forEach(columns => {
+                var resultRow = {
+                    Date: Number(columns[2].value),
+                    Time: Number(columns[3].value),
+                    DeviceNumber: Number(columns[8].value)
+                };
+                rws.push(resultRow);
+            });
 
-        res.send(JSON.stringify(rws));
+            res.send(JSON.stringify(rws));
+        }
     });
 
 
